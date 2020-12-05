@@ -15,3 +15,7 @@ def input(day, converter):
 def to_list_of_int(text):
     text = text.strip()
     return [int(i) for i in (text.split(",") if "," in text else text.splitlines())]
+
+
+def to_list_of_str(text):
+    return text.splitlines()
