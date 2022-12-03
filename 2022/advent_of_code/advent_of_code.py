@@ -9,7 +9,7 @@ with (Path(__file__).parents[1] / "session.cookie").open() as cookie:
     COOKIES = dict(session=cookie.read().strip())
 
 
-def input(converter):
+def input(converter=str):
     day = Path(sys.argv[0]).resolve().parent.name
     cache = Path('data.txt')
     if cache.exists():
