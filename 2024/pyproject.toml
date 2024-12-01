@@ -67,16 +67,14 @@ select = [
   "YTT",
 ]
 ignore = [
-  # Allow non-abstract empty methods in abstract base classes
-  "B027",
-  # Allow boolean positional values in function calls, like `dict.get(... True)`
-  "FBT003",
-  # Ignore checks for possible passwords
-  "S105", "S106", "S107",
-  # Ignore complexity
-  "C901", "PLR0911", "PLR0912", "PLR0913", "PLR0915",
-  # Ignore asserts and prints
-  "S101", "T201", "RUF018",
+  "B027", # Allow non-abstract empty methods in abstract base classes
+  "FBT003", # Allow boolean positional values in function calls, like `dict.get(..., True)`
+  "C901", "PLR0911", "PLR0912", "PLR0913", "PLR0915", # Complexity
+  "S101", "RUF018", # Asserts
+  "T201",  # Print
+  "PLR2004", # Magic constant
+  "B905",  # zip without explict strictness
+  "E741",  # Ambiguous variable names, like `l`
 ]
 unfixable = [
   # Don't touch unused imports
