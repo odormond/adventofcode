@@ -57,10 +57,15 @@ def setup():
 
 
 def run_day():
+    if "--pdb" in sys.argv:
+        pdb = ["-m", "pdb", "-c", "cont"]
+        del sys.argv[sys.argv.index("--pdb")]
+    else:
+        pdb = []
     day = sys.argv[1]
     import os
     os.chdir(day)
-    os.execv(sys.executable, [sys.executable, f"{NUMBERS[int(day)]}.py", *sys.argv[2:]])  # noqa: S606
+    os.execv(sys.executable, [sys.executable, *pdb, f"{NUMBERS[int(day)]}.py", *sys.argv[2:]])  # noqa: S606
 
 
 def input(converter=str):  # noqa: A001
